@@ -1,6 +1,11 @@
-ALGORITHM algorithm_name
+ALGORITHM Dot product
 VAR
-    set_declarations
+    product
 BEGIN
-    set_instructions
+    PROCEDURE dot_product(ps)
+    VAR
+        set_declarations
+    BEGIN
+        set_instructions
+    END
 END
