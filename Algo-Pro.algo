@@ -1,11 +1,33 @@
+PROCEDURE dot_product(v1,v2,ps)
+VAR
+    ps:INTEGER:=0
+    
+BEGIN
+    v1 : ARRAY_OF INTEGER;
+    v2 : ARRAY_OF INTEGER;
+    IF (v1.length=v2.length) THEN
+        FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps=ps+v1[i]*v2[i]
+    END_FOR
+    ELSE
+        write('The twovectors are not equal')
+    END_IF
+END
+
 ALGORITHM Dot product
 VAR
-    product
+    tab : ARRAY_OF array;
+    ps : INTEGER:=0;
+    i,j : INTEGER;
 BEGIN
-    PROCEDURE dot_product(ps)
-    VAR
-        set_declarations
-    BEGIN
-        set_instructions
-    END
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        FOR j FROM i+1 TO tab.length-1 STEP 1  DO
+            dot_product(tab[i],tab[j],ps)
+        END_FOR
+    END_FOR
+    IF (ps=0) THEN
+        write('The two vectors are orthogonal')
+    ELSE
+        write('The two vectors are not orthogonal')
+    END_IF
 END
